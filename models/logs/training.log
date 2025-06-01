@@ -1,0 +1,219 @@
+2025-04-06 10:01:36,669 - ERROR - Failed to load CSV: 'label'
+2025-04-06 10:07:43,103 - INFO - Data loaded. Columns: ['id_code', 'diagnosis']
+2025-04-06 10:07:43,117 - INFO - Class distribution:
+diagnosis
+0    1805
+2     999
+1     370
+4     295
+3     193
+Name: count, dtype: int64
+2025-04-06 10:07:43,127 - WARNING - Error loading data/train_images\b2b79b37d314.png: [Errno 2] No such file or directory: 'data/train_images\\b2b79b37d314.png'
+2025-04-06 10:07:43,191 - ERROR - Fatal error: -1
+Traceback (most recent call last):
+  File "C:\project\models\train.py", line 166, in main
+    sample_weights = [train_dataset.class_weights[label] for _, label in train_dataset]
+  File "C:\project\models\train.py", line 166, in <listcomp>
+    sample_weights = [train_dataset.class_weights[label] for _, label in train_dataset]
+KeyError: -1
+2025-04-06 10:12:46,308 - INFO - Starting training process
+2025-04-06 10:12:46,316 - INFO - Data loaded from data/final_image1.csv
+2025-04-06 10:12:46,325 - INFO - Class distribution:
+diagnosis
+0    1805
+2     999
+1     370
+4     295
+3     193
+Name: count, dtype: int64
+2025-04-06 10:12:46,579 - WARNING - Missing 2929 image files (keeping 0 valid)
+2025-04-06 10:12:46,579 - ERROR - Fatal error in training: No valid images found in dataset
+Traceback (most recent call last):
+  File "C:\project\models\train.py", line 255, in main
+    train_dataset = RetinaDataset(train_df, Config.IMAGE_DIR, get_transforms(True))
+  File "C:\project\models\train.py", line 75, in __init__
+    raise ValueError("No valid images found in dataset")
+ValueError: No valid images found in dataset
+2025-04-06 10:19:12,203 - INFO - 
+Path Verification:
+2025-04-06 10:19:12,205 - INFO - Image directory: C:\project\data\retina
+2025-04-06 10:19:12,205 - INFO - Directory exists: True
+2025-04-06 10:19:12,219 - INFO - Found 3662 files in image directory
+2025-04-06 10:19:12,219 - INFO - First 5 files: ['000c1434d8d7.png', '001639a390f0.png', '0024cdab0c1e.png', '002c21358ce6.png', '005b95c28852.png']
+2025-04-06 10:19:12,219 - INFO - 
+CSV path: C:\project\data\final_image1.csv
+2025-04-06 10:19:12,219 - INFO - CSV exists: True
+2025-04-06 10:19:12,221 - INFO - Starting training process
+2025-04-06 10:19:12,233 - INFO - Data loaded from data/final_image1.csv
+2025-04-06 10:19:12,233 - INFO - 
+Verifying first 5 files:
+2025-04-06 10:19:12,233 - INFO - data/retina\000c1434d8d7.png exists: True
+2025-04-06 10:19:12,233 - INFO - data/retina\001639a390f0.png exists: True
+2025-04-06 10:19:12,233 - INFO - data/retina\0024cdab0c1e.png exists: True
+2025-04-06 10:19:12,249 - INFO - data/retina\002c21358ce6.png exists: True
+2025-04-06 10:19:12,249 - INFO - data/retina\005b95c28852.png exists: True
+2025-04-06 10:19:12,249 - INFO - Class distribution:
+diagnosis
+0    1805
+2     999
+1     370
+4     295
+3     193
+Name: count, dtype: int64
+2025-04-06 10:19:13,092 - INFO - Class weights: {0: 2.028393351800554, 2: 3.6658322903629537, 3: 19.01948051948052, 1: 9.89527027027027, 4: 12.411016949152541}
+2025-04-06 10:19:13,255 - INFO - Class weights: {0: 2.0304709141274238, 4: 12.423728813559322, 2: 3.665, 3: 18.794871794871796, 1: 9.905405405405405}
+2025-04-06 10:19:13,255 - INFO - Training samples: 2929
+2025-04-06 10:19:13,255 - INFO - Validation samples: 733
+2025-04-06 10:24:06,714 - INFO - Using device: cpu
+2025-04-06 10:25:19,856 - ERROR - Fatal error in training: expected scalar type Long but found Int
+Traceback (most recent call last):
+  File "C:\project\models\train.py", line 318, in main
+    train_model(model, train_loader, val_loader, criterion, optimizer, scheduler)
+  File "C:\project\models\train.py", line 206, in train_model
+    loss = criterion(outputs, labels)
+  File "C:\Users\khema\anaconda3\envs\tensorflow\lib\site-packages\torch\nn\modules\module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\khema\anaconda3\envs\tensorflow\lib\site-packages\torch\nn\modules\module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\project\models\train.py", line 174, in forward
+    ce_loss = F.cross_entropy(inputs, targets, reduction='none')
+  File "C:\Users\khema\anaconda3\envs\tensorflow\lib\site-packages\torch\nn\functional.py", line 3494, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(
+RuntimeError: expected scalar type Long but found Int
+2025-04-06 10:31:03,552 - INFO - 
+Path Verification:
+2025-04-06 10:31:03,552 - INFO - Image directory: C:\project\data\retina
+2025-04-06 10:31:03,552 - INFO - Directory exists: True
+2025-04-06 10:31:03,638 - INFO - Found 3662 files in image directory
+2025-04-06 10:31:03,638 - INFO - First 5 files: ['000c1434d8d7.png', '001639a390f0.png', '0024cdab0c1e.png', '002c21358ce6.png', '005b95c28852.png']
+2025-04-06 10:31:03,638 - INFO - 
+CSV path: C:\project\data\final_image1.csv
+2025-04-06 10:31:03,638 - INFO - CSV exists: True
+2025-04-06 10:31:03,638 - INFO - Starting training process
+2025-04-06 10:31:03,657 - INFO - Data loaded from data/final_image1.csv
+2025-04-06 10:31:03,657 - INFO - 
+Verifying first 5 files:
+2025-04-06 10:31:03,657 - INFO - data/retina\000c1434d8d7.png exists: True
+2025-04-06 10:31:03,657 - INFO - data/retina\001639a390f0.png exists: True
+2025-04-06 10:31:03,657 - INFO - data/retina\0024cdab0c1e.png exists: True
+2025-04-06 10:31:03,657 - INFO - data/retina\002c21358ce6.png exists: True
+2025-04-06 10:31:03,657 - INFO - data/retina\005b95c28852.png exists: True
+2025-04-06 10:31:03,670 - INFO - Class distribution:
+diagnosis
+0    1805
+2     999
+1     370
+4     295
+3     193
+Name: count, dtype: int64
+2025-04-06 10:31:04,004 - INFO - Class weights: {0: 2.028393351800554, 2: 3.6658322903629537, 3: 19.01948051948052, 1: 9.89527027027027, 4: 12.411016949152541}
+2025-04-06 10:31:04,084 - INFO - Class weights: {0: 2.0304709141274238, 4: 12.423728813559322, 2: 3.665, 3: 18.794871794871796, 1: 9.905405405405405}
+2025-04-06 10:31:04,084 - INFO - Training samples: 2929
+2025-04-06 10:31:04,084 - INFO - Validation samples: 733
+2025-04-06 10:31:04,163 - ERROR - Fatal error in training: tensor(0)
+Traceback (most recent call last):
+  File "C:\project\models\train.py", line 305, in main
+    sample_weights = [train_dataset.class_weights[label]
+  File "C:\project\models\train.py", line 305, in <listcomp>
+    sample_weights = [train_dataset.class_weights[label]
+KeyError: tensor(0)
+2025-04-06 10:47:13,563 - INFO - 
+Path Verification:
+2025-04-06 10:47:13,565 - INFO - Image directory: C:\project\data\retina
+2025-04-06 10:47:13,565 - INFO - Directory exists: True
+2025-04-06 10:47:13,577 - INFO - Found 3662 files in image directory
+2025-04-06 10:47:13,577 - INFO - First 5 files: ['000c1434d8d7.png', '001639a390f0.png', '0024cdab0c1e.png', '002c21358ce6.png', '005b95c28852.png']
+2025-04-06 10:47:13,577 - INFO - 
+CSV path: C:\project\data\final_image1.csv
+2025-04-06 10:47:13,577 - INFO - CSV exists: True
+2025-04-06 10:47:13,577 - INFO - Starting training process
+2025-04-06 10:47:13,589 - INFO - Data loaded from data/final_image1.csv
+2025-04-06 10:47:13,589 - INFO - 
+Verifying first 5 files:
+2025-04-06 10:47:13,589 - INFO - data/retina\000c1434d8d7.png exists: True
+2025-04-06 10:47:13,589 - INFO - data/retina\001639a390f0.png exists: True
+2025-04-06 10:47:13,589 - INFO - data/retina\0024cdab0c1e.png exists: True
+2025-04-06 10:47:13,589 - INFO - data/retina\002c21358ce6.png exists: True
+2025-04-06 10:47:13,589 - INFO - data/retina\005b95c28852.png exists: True
+2025-04-06 10:47:13,589 - INFO - Class distribution:
+diagnosis
+0    1805
+2     999
+1     370
+4     295
+3     193
+Name: count, dtype: int64
+2025-04-06 10:47:14,018 - INFO - Class weights: {0: 2.028393351800554, 2: 3.6658322903629537, 3: 19.01948051948052, 1: 9.89527027027027, 4: 12.411016949152541}
+2025-04-06 10:47:14,129 - INFO - Class weights: {0: 2.0304709141274238, 4: 12.423728813559322, 2: 3.665, 3: 18.794871794871796, 1: 9.905405405405405}
+2025-04-06 10:47:14,129 - INFO - Training samples: 2929
+2025-04-06 10:47:14,129 - INFO - Validation samples: 733
+2025-04-06 10:51:35,916 - INFO - Using device: cpu
+2025-04-06 11:06:33,070 - INFO - 
+Epoch 1/30
+2025-04-06 11:06:33,080 - INFO - Train Loss: 6.8340 | Acc: 27.59%
+2025-04-06 11:06:33,080 - INFO - Val Loss: 3.3857 | Acc: 70.26%
+2025-04-06 11:06:33,231 - INFO - Saved new best model (Acc: 70.26%) to models\checkpoints\best_model.pth
+2025-04-06 11:22:07,962 - INFO - 
+Epoch 2/30
+2025-04-06 11:22:07,962 - INFO - Train Loss: 5.4503 | Acc: 45.61%
+2025-04-06 11:22:07,962 - INFO - Val Loss: 4.0357 | Acc: 65.35%
+2025-04-06 11:37:30,806 - INFO - 
+Epoch 3/30
+2025-04-06 11:37:30,822 - INFO - Train Loss: 5.1976 | Acc: 48.07%
+2025-04-06 11:37:30,823 - INFO - Val Loss: 3.0737 | Acc: 75.31%
+2025-04-06 11:37:30,955 - INFO - Saved new best model (Acc: 75.31%) to models\checkpoints\best_model.pth
+2025-04-06 11:52:57,675 - INFO - 
+Epoch 4/30
+2025-04-06 11:52:57,675 - INFO - Train Loss: 4.7900 | Acc: 50.73%
+2025-04-06 11:52:57,675 - INFO - Val Loss: 2.8075 | Acc: 75.03%
+2025-04-06 12:08:05,170 - INFO - 
+Epoch 5/30
+2025-04-06 12:08:05,170 - INFO - Train Loss: 4.8426 | Acc: 51.21%
+2025-04-06 12:08:05,170 - INFO - Val Loss: 2.7409 | Acc: 77.22%
+2025-04-06 12:08:05,295 - INFO - Saved new best model (Acc: 77.22%) to models\checkpoints\best_model.pth
+2025-04-06 12:23:13,736 - INFO - 
+Epoch 6/30
+2025-04-06 12:23:13,736 - INFO - Train Loss: 4.6359 | Acc: 52.41%
+2025-04-06 12:23:13,736 - INFO - Val Loss: 3.2687 | Acc: 76.53%
+2025-04-06 12:38:25,483 - INFO - 
+Epoch 7/30
+2025-04-06 12:38:25,483 - INFO - Train Loss: 4.5021 | Acc: 55.38%
+2025-04-06 12:38:25,483 - INFO - Val Loss: 3.0345 | Acc: 72.71%
+2025-04-06 12:53:27,935 - INFO - 
+Epoch 8/30
+2025-04-06 12:53:27,937 - INFO - Train Loss: 4.3381 | Acc: 56.74%
+2025-04-06 12:53:27,937 - INFO - Val Loss: 2.4573 | Acc: 80.22%
+2025-04-06 12:53:28,086 - INFO - Saved new best model (Acc: 80.22%) to models\checkpoints\best_model.pth
+2025-04-06 13:08:30,283 - INFO - 
+Epoch 9/30
+2025-04-06 13:08:30,285 - INFO - Train Loss: 4.1780 | Acc: 57.22%
+2025-04-06 13:08:30,285 - INFO - Val Loss: 2.4129 | Acc: 79.54%
+2025-04-06 13:23:36,751 - INFO - 
+Epoch 10/30
+2025-04-06 13:23:36,751 - INFO - Train Loss: 4.1260 | Acc: 58.69%
+2025-04-06 13:23:36,751 - INFO - Val Loss: 2.7411 | Acc: 74.90%
+2025-04-06 13:38:40,949 - INFO - 
+Epoch 11/30
+2025-04-06 13:38:40,949 - INFO - Train Loss: 4.1729 | Acc: 57.77%
+2025-04-06 13:38:40,959 - INFO - Val Loss: 2.6555 | Acc: 77.63%
+2025-04-06 13:53:44,066 - INFO - 
+Epoch 12/30
+2025-04-06 13:53:44,080 - INFO - Train Loss: 4.1227 | Acc: 58.31%
+2025-04-06 13:53:44,080 - INFO - Val Loss: 2.6185 | Acc: 80.76%
+2025-04-06 13:53:44,227 - INFO - Saved new best model (Acc: 80.76%) to models\checkpoints\best_model.pth
+2025-04-06 14:09:24,394 - INFO - 
+Epoch 13/30
+2025-04-06 14:09:24,397 - INFO - Train Loss: 4.1041 | Acc: 55.99%
+2025-04-06 14:09:24,397 - INFO - Val Loss: 2.6784 | Acc: 78.72%
+2025-04-06 14:25:27,098 - INFO - 
+Epoch 14/30
+2025-04-06 14:25:27,101 - INFO - Train Loss: 3.9735 | Acc: 59.17%
+2025-04-06 14:25:27,102 - INFO - Val Loss: 2.5274 | Acc: 79.13%
+2025-04-06 14:41:05,936 - INFO - 
+Epoch 15/30
+2025-04-06 14:41:05,938 - INFO - Train Loss: 3.7063 | Acc: 60.57%
+2025-04-06 14:41:05,938 - INFO - Val Loss: 2.9300 | Acc: 76.67%
+2025-04-06 14:56:58,548 - INFO - 
+Epoch 16/30
+2025-04-06 14:56:58,548 - INFO - Train Loss: 3.7720 | Acc: 61.32%
+2025-04-06 14:56:58,548 - INFO - Val Loss: 2.6554 | Acc: 76.67%
